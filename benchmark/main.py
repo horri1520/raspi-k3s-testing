@@ -59,5 +59,5 @@ def start_test():
 
 
 if __name__ == "__main__":
-    port = 8000
+    port = 3000
     app.run(host="0.0.0.0", port=port)
