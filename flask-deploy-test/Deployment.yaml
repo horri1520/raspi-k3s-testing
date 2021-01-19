@@ -6,7 +6,7 @@ spec:
   selector:
     app: flask-deploy-test
   ports:
-    - protocol: "TCP"
+     protocol: "TCP"
      port: 6000
      targetPort: 5000
   type: LoadBalancer
