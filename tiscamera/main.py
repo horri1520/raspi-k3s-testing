@@ -12,12 +12,11 @@ CAM_ADDRESS = '192.168.1.59'
 
 
 def main():
-    try:
-        Gst.init(sys.argv)
-        source = Gst.ElementFactory.make("tcambin")
-        serials = source.get_device_serials()
+    Gst.init(sys.argv)
+    source = Gst.ElementFactory.make("tcambin")
+    serials = source.get_device_serials()
 
-        print(serials)
+    print(serials)
 
 
 if __name__ == "__main__":
