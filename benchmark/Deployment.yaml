@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: raspi-k3s-benchmark
+spec:
+  selector:
+    app: raspi-k3s-benchmark
+  ports:
+    - protocol: "TCP"
+     port: 6000
+     targetPort: 5000
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+name: raspi-k3s-benchmark
+spec:
+  selector:
+    matchLabels:
+      app: raspi-k3s-benchmark
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: raspi-k3s-benchmark
+    spec:
+      containers:
+      - name: raspi-k3s-benchmark
+        image: docker.io/horri1520/flask-kubernetes-app
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 5000
