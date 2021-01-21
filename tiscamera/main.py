@@ -49,13 +49,13 @@ def main():
         print('ERROR: Cannot detect tiscamera.')
         sys.exit()
 
-    camera.set_state(Gst.State.READY)
-    caps = Gst.Caps.new_empty()
+    # camera.set_state(Gst.State.READY)
+    # caps = Gst.Caps.new_empty()
 
-    structure = Gst.Structure.new_from_string("video/x-raw")
+    # structure = Gst.Structure.new_from_string("video/x-raw")
 
-    frame_rates = get_frame_rate_list(camera, format_number)
-    print(frame_rates)
+    # frame_rates = get_frame_rate_list(camera, format_number)
+    # print(frame_rates)
     # rate = frame_rates[0]
 
 
